@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function provesAction()
     {
         
         /*$em = $this->getDoctrine()->getEntityManager();
@@ -56,6 +56,11 @@ class DefaultController extends Controller
 		}
         
         die();
+        return $this->render('BlogBundle:Default:index.html.twig');
+    }
+    
+    public function indexAction()
+    {
         return $this->render('BlogBundle:Default:index.html.twig');
     }
 }
