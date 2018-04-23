@@ -16,6 +16,7 @@
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
+                        
                         <a class="navbar-brand" href="{{path("blog_homepage")}}">Blog</a>
                     </div>
 
@@ -31,7 +32,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">
                                 {% if app.user != null%}
-                                    Bienvenido, {{app.user.name}} {{app.user.surname}}
+                                    Benvingut/da, {{app.user.name}} {{app.user.surname}}
                                 {% endif%}
                                 </a>
                             </li>
@@ -53,9 +54,10 @@
             </nav>
         </header>
         <section id="content">
-            {% block content %} {% endblock %}
+            {% block content %} Content default {% endblock %}
         </section>
         <footer>
+             <hr>
             Mireia Consarnau
         </footer>
     </body>
