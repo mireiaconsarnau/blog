@@ -45,7 +45,7 @@ class Entry
     protected $entryTag;
 	
     public function __construct() {
-	$this->entryTag = new ArrayCollection();
+	$this->entry = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
