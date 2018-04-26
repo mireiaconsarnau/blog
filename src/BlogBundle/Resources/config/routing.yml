@@ -15,3 +15,35 @@ blog_homepage:
 blog_proves:
     path:     /proves
     defaults: { _controller: BlogBundle:Default:proves }
+    
+blog_index_tag:
+    path: /tags
+    defaults: { _controller: BlogBundle:Tag:index }
+    
+blog_add_tag:
+    path: /tags/add
+    defaults: { _controller: BlogBundle:Tag:add }
+    
+blog_delete_tag:
+    path: /tags/delete/{id}
+    defaults: { _controller: BlogBundle:Tag:delete }
+
+blog_index_category:
+    path: /categories
+    defaults: { _controller: BlogBundle:Category:index }
+    
+blog_add_category:
+    path: /categories/add
+    defaults: { _controller: BlogBundle:Category:add }
+    
+blog_delete_category:
+    path: /categories/delete/{id}
+    defaults: { _controller: BlogBundle:Category:delete }
+
+blog_edit_category:
+    path: /categories/edit/{id}
+    defaults: { _controller: BlogBundle:Category:edit }
+    
+blog_read_category:
+    path: /category/{id}/{page}
+    defaults: { _controller: BlogBundle:Category:category, page:1 }
