@@ -23,7 +23,7 @@
                     <td><a href="{{path("blog_edit_category", {"id":category.id})}}" class="btn btn-warning">Editar</a></td>
                     <td>
                         {% if category.entries|length == 0 %}
-                            <a href="{{path("blog_delete_category", {"id":category.id})}}" class="btn btn-danger">Eliminar</a>
+                            <a href="{{path("blog_delete_category", {"id":category.id})}}" class="btn btn-danger" onclick="return confirm('are u sure?')>Esborrar</a>
                         {% else %} 
                            Categoria en uso
                         {% endif %}
