@@ -21,7 +21,7 @@
                     <td>{{ tag.description }}</td>
                     <td>
                         {% if tag.entryTag|length == 0 %}
-                            <a href="{{path("blog_delete_tag", {"id":tag.id})}}" class="btn btn-danger">Esborrar</a>
+                            <a href="{{path("blog_delete_tag", {"id":tag.id})}}" class="btn btn-danger" onclick="return confirm('are u sure?')">Esborrar</a>
                         {% else %} 
                            Tag en ús. No es pot esborrar
                         {% endif %}
