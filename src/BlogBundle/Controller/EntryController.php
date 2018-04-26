@@ -16,7 +16,46 @@ class EntryController extends Controller
 	public function __construct() {
 		$this->session=new Session();
 	}
-	
+        
+//	public function indexAction(Request $request, $page){		
+//		$em = $this->getDoctrine()->getEntityManager();
+//		$entry_repo=$em->getRepository("BlogBundle:Entry");
+//                $entries=$entry_repo->findAll();
+//		$category_repo=$em->getRepository("BlogBundle:Category");
+//		$categories=$category_repo->findAll();
+//		
+////		$pageSize = 5;
+////		$entries=$entry_repo->getPaginateEntries($pageSize,$page);
+////		
+////		$totalItems = count($entries);
+////		$pagesCount = ceil($totalItems/$pageSize);
+////		
+////		
+////		return $this->render("BlogBundle:Entry:index.html.twig",array(
+////			"entries" => $entries,
+////			"categories" => $categories,
+////			"totalItems" => $totalItems,
+////			"pagesCount" => $pagesCount,
+////			"page" => $page,
+////			"page_m" => $page
+////		));
+//
+//	}
+        public function indexAction(Request $request){		
+		$em = $this->getDoctrine()->getEntityManager();
+		$entry_repo=$em->getRepository("BlogBundle:Entry");
+                $entries=$entry_repo->findAll();
+                $category_repo=$em->getRepository("BlogBundle:Category");
+		$categories=$category_repo->findAll();
+                
+                return $this->render("BlogBundle:Entry:index.html.twig",array(
+			"entries" => $entries,
+                        "categories" => $categories,
+
+		));
+	}
+
+
 	public function addAction(Request $request){
 		$entry = new Entry();
 		$form = $this->createForm(EntryType::class,$entry);
