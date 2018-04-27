@@ -214,13 +214,13 @@ class EntryController extends Controller
 						);
 				
 				if($flush==null){
-					$status = "La entrada se ha editado correctamente";
+					$status = "Entrada creada correctament";
 				}else{
-					$status = "La entrada se ha editado mal";
+					$status = "Alguna cosa ha fallat";
 				}
 				
 			}else{
-				$status = "El formulario no es valido";
+				$status = "Formulari no vàlid";
 			}
 			
 			$this->session->getFlashBag()->add("status", $status);
